@@ -1,0 +1,31 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+tests/_test.db
+tests/_dbg.db
+
+# --- Env / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Node / Next.js (frontend, later phases) ---
+node_modules/
+.next/
+out/
+.vercel/
+dist/
+build/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

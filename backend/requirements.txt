@@ -1,0 +1,32 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# --- Data / ORM ---
+sqlmodel==0.0.22
+sqlalchemy==2.0.36
+psycopg2-binary==2.9.10
+alembic==1.14.0
+
+# --- Config / validation ---
+pydantic==2.10.4
+pydantic-settings==2.7.0
+email-validator==2.2.0
+
+# --- Security / auth ---
+bcrypt==4.2.1
+PyJWT==2.10.1
+pyotp==2.9.0
+qrcode[pil]==8.0
+
+# --- HTTP client (WhatsApp / external) ---
+httpx==0.28.1
+
+# --- Rate limiting ---
+slowapi==0.1.9
+
+# --- Monitoring ---
+sentry-sdk[fastapi]==2.19.2
+
+# --- Dev / test ---
+pytest==8.3.4
