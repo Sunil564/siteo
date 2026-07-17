@@ -4,12 +4,13 @@ services:
   - type: web
     name: siteo-api
     runtime: python
-    plan: starter
+    # Free plan: no preDeployCommand and no Shell access, so migrations run at
+    # startup instead (alembic upgrade head is idempotent). Bump back to
+    # `starter` later to get preDeploy + Shell + always-on (no cold starts).
+    plan: free
     rootDir: backend
     buildCommand: "pip install -r requirements.txt"
-    # Run migrations before the new version goes live.
-    preDeployCommand: "alembic upgrade head"
-    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     healthCheckPath: /health
     autoDeploy: true
     envVars:
