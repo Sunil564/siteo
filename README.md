@@ -58,4 +58,4 @@ uvicorn app.main:app --reload
 ```
 
 ---
-Powered by MAIG Team.
+Powered by Code&Clicks.

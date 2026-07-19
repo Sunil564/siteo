@@ -2,7 +2,7 @@
 
 **Org:** SITEO — Seervi International Trade & Education Organization
 **Domain:** siteo.in
-**Owners:** Sunil Choudary, Raveesh R (MAIG Team)
+**Owners:** Sunil Choudary, Raveesh R (Code&Clicks)
 **Doc version:** 1.1
 **Context source:** Seervi Expo 2026 was launch event for SITEO. Expo now becomes historical archive under SITEO umbrella. Seervi Expo + Seervi Capital both sit under SITEO.
 
@@ -114,7 +114,7 @@ Steps (Raveesh owns DNS on GoDaddy):
 - Events teaser: next upcoming event card (pulled live from DB) + "View all events".
 - Seervi Capital teaser: 1 block, qualitative, → `/seervi-capital`.
 - Legacy/archive teaser: "Seervi Expo 2026 — 11,000+ attendees · 6+ industry zones · 50+ exhibitors" → archive page. Purple gradient accent here (brand callback).
-- Footer: org contact — phone +91 70264 97770, WhatsApp, Instagram (seervibusinessexpo), email seervibusinessexpo@gmail.com, enquiry link, legal links, "Powered by MAIG Team".
+- Footer: org contact — phone +91 70264 97770, WhatsApp, Instagram (seervibusinessexpo), email seervibusinessexpo@gmail.com, enquiry link, legal links, "Powered by Code&Clicks".
 
 ### 4.2 About
 - Mission, the three pillars expanded, structure described in prose (SITEO as proposed Section 8 org — say "a non-profit community organization", skip the legal-comparison detail).
