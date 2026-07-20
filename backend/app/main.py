@@ -10,9 +10,12 @@ from slowapi.middleware import SlowAPIMiddleware
 
 from app import __version__
 from app.api import auth as auth_api
+from app.api import contact as contact_api
+from app.api import enquiries as enquiries_api
 from app.api import events_admin as events_admin_api
 from app.api import events_public as events_public_api
 from app.api import health as health_api
+from app.api import membership as membership_api
 from app.api import payments as payments_api
 from app.config import settings
 from app.limiter import limiter
@@ -58,6 +61,12 @@ def create_app() -> FastAPI:
     app.include_router(events_public_api.router, prefix=settings.API_V1_PREFIX)
     app.include_router(events_admin_api.router, prefix=settings.API_V1_PREFIX)
     app.include_router(payments_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(enquiries_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(enquiries_api.admin_router, prefix=settings.API_V1_PREFIX)
+    app.include_router(membership_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(membership_api.admin_router, prefix=settings.API_V1_PREFIX)
+    app.include_router(contact_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(contact_api.admin_router, prefix=settings.API_V1_PREFIX)
 
     @app.get("/", tags=["health"])
     def root() -> dict:

@@ -29,6 +29,13 @@ exist in Meta yet; create them in WhatsApp Manager to match exactly:
     {{3}} date & time
     {{4}} venue  (hybrid: venue text + a "Join online: <link>" line appended)
     {{5}} reference id
+
+  enquiry_ack             (BODY, 2 variables)  — §4.9, sends the enquiry number back
+    {{1}} name
+    {{2}} enquiry number (e.g. SITEO-ENQ-2026-00042)
+
+  membership_ack          (BODY, 1 variable)   — §4.8, optional acknowledgement
+    {{1}} name
 """
 from __future__ import annotations
 
@@ -240,18 +247,16 @@ def _post_template_message(to: str, template: str, language: str, variables: lis
         return False, None, str(exc)
 
 
-# --- Public entrypoint -----------------------------------------------------
+# --- Generic send core -----------------------------------------------------
 
 
-def send_event_confirmation(session: Session, event: Event, reg: EventRegistration) -> SendResult:
-    """Send the on-register confirmation. Best-effort: never raises — a failure
-    here must not fail the registration. Verifies the template before sending.
+def send_template(session: Session, *, template: str, phone: str, variables: list[str], ref: str = "") -> SendResult:
+    """Verify a template against the WABA, then send it. Best-effort: never
+    raises. No-ops cleanly when WhatsApp is disabled. This is the single choke
+    point that guards against Meta error 132001 (language / variable mismatch).
     """
     if not is_active(session):
         return SendResult(sent=False, skipped_reason="whatsapp disabled")
-
-    template = template_for_mode(event.mode)
-    variables = build_variables(event, reg)
 
     meta = _fetch_template_meta(template)
     if meta is None:
@@ -259,7 +264,7 @@ def send_event_confirmation(session: Session, event: Event, reg: EventRegistrati
     if meta.status != "APPROVED":
         return SendResult(sent=False, template=template, skipped_reason=f"template status {meta.status}")
     if meta.body_param_count != len(variables):
-        # This is exactly the class of mismatch that triggers 132001 — refuse to send.
+        # Exactly the class of mismatch that triggers 132001 — refuse to send.
         return SendResult(
             sent=False,
             template=template,
@@ -267,10 +272,41 @@ def send_event_confirmation(session: Session, event: Event, reg: EventRegistrati
             skipped_reason=f"variable count mismatch: template expects {meta.body_param_count}, have {len(variables)}",
         )
 
-    to = _normalize_phone(reg.phone)
+    to = _normalize_phone(phone)
     ok, msg_id, err = _post_template_message(to, template, meta.language, variables)
     if not ok:
-        logger.warning("whatsapp: send failed for reg %s: %s", reg.ref_id, err)
+        logger.warning("whatsapp: send of %s failed (%s): %s", template, ref, err)
         return SendResult(sent=False, template=template, language=meta.language, error=err)
-
     return SendResult(sent=True, template=template, language=meta.language, message_id=msg_id)
+
+
+# --- Public entrypoints ----------------------------------------------------
+
+
+def send_event_confirmation(session: Session, event: Event, reg: EventRegistration) -> SendResult:
+    """On-register event confirmation (§5.2)."""
+    template = template_for_mode(event.mode)
+    variables = build_variables(event, reg)
+    return send_template(session, template=template, phone=reg.phone, variables=variables, ref=reg.ref_id)
+
+
+def send_enquiry_ack(session: Session, *, name: str, phone: str, enquiry_no: str) -> SendResult:
+    """Enquiry acknowledgement carrying the enquiry number (§4.9)."""
+    return send_template(
+        session,
+        template=settings.WHATSAPP_TEMPLATE_ENQUIRY_ACK,
+        phone=phone,
+        variables=[name, enquiry_no],
+        ref=enquiry_no,
+    )
+
+
+def send_membership_ack(session: Session, *, name: str, phone: str) -> SendResult:
+    """Optional membership-interest acknowledgement (§4.8)."""
+    return send_template(
+        session,
+        template=settings.WHATSAPP_TEMPLATE_MEMBERSHIP_ACK,
+        phone=phone,
+        variables=[name],
+        ref=phone,
+    )

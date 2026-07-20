@@ -69,6 +69,9 @@ class Settings(BaseSettings):
     # hybrid reuses the physical template with a join-link line appended.
     WHATSAPP_TEMPLATE_EVENT_VIRTUAL: str = "event_confirm_virtual"
     WHATSAPP_TEMPLATE_EVENT_PHYSICAL: str = "event_confirm_physical"
+    # Enquiry acknowledgement (sends the enquiry number back) + membership ack.
+    WHATSAPP_TEMPLATE_ENQUIRY_ACK: str = "enquiry_ack"
+    WHATSAPP_TEMPLATE_MEMBERSHIP_ACK: str = "membership_ack"
 
     # --- Payments (Razorpay) — dormant, behind settings toggle ---
     RAZORPAY_KEY_ID: str | None = None
