@@ -58,9 +58,17 @@ class Settings(BaseSettings):
     # --- WhatsApp (Meta Cloud API via Vahini WABA) — transactional only ---
     WHATSAPP_ENABLED: bool = False
     WHATSAPP_PHONE_NUMBER_ID: str | None = None
+    # WABA id is needed to read message-template metadata (language + variable
+    # count) so we can verify before sending (expo lesson: error 132001).
+    WHATSAPP_BUSINESS_ACCOUNT_ID: str | None = None
     WHATSAPP_ACCESS_TOKEN: str | None = None
     WHATSAPP_API_VERSION: str = "v21.0"
     WHATSAPP_DEFAULT_LANG: str = "en"
+    WHATSAPP_TIMEOUT_SECONDS: float = 10.0
+    # Event-confirmation template names, selected by event mode (§5.2).
+    # hybrid reuses the physical template with a join-link line appended.
+    WHATSAPP_TEMPLATE_EVENT_VIRTUAL: str = "event_confirm_virtual"
+    WHATSAPP_TEMPLATE_EVENT_PHYSICAL: str = "event_confirm_physical"
 
     # --- Payments (Razorpay) — dormant, behind settings toggle ---
     RAZORPAY_KEY_ID: str | None = None

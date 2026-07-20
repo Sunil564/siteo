@@ -14,6 +14,8 @@ os.environ["ENV"] = "development"
 os.environ["JWT_SECRET"] = "test-secret-key-for-tests-only-not-real"
 os.environ["SEED_SUPERADMIN_USERNAME"] = "root"
 os.environ["SEED_SUPERADMIN_PASSWORD"] = "SuperSecret123!"
+# Keep the in-memory rate limiter from tripping across the whole test session.
+os.environ["RATE_LIMIT_DEFAULT"] = "100000/minute"
 
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
@@ -21,7 +23,12 @@ from sqlmodel import SQLModel  # noqa: E402
 
 import app.models  # noqa: E402,F401  registers tables
 from app.database import engine  # noqa: E402
+from app.limiter import limiter  # noqa: E402
 from app.main import app  # noqa: E402
+
+# Rate limiting is exercised implicitly by many tests logging in repeatedly;
+# disable it so per-endpoint limits (e.g. login 10/min) don't cause flakiness.
+limiter.enabled = False
 from app.seed import seed_settings, seed_superadmin  # noqa: E402
 from sqlmodel import Session  # noqa: E402
 
@@ -44,3 +51,9 @@ def _db():
 def client():
     with TestClient(app) as c:
         yield c
+
+
+@pytest.fixture
+def db_session():
+    with Session(engine) as s:
+        yield s
