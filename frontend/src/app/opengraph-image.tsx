@@ -1,20 +1,20 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { ImageResponse } from "next/og";
 
+export const runtime = "nodejs";
 export const alt = "SITEO — Seervi International Trade & Education Organization";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const BLOCKS = [
-  { letter: "S", color: "#dd156b" },
-  { letter: "I", color: "#488ecc" },
-  { letter: "T", color: "#f6931e" },
-  { letter: "E", color: "#6f2d8f" },
-  { letter: "O", color: "#00707e" },
-];
+// Embed the actual logo file as a data URI (read at build time).
+function logoDataUri(): string {
+  const bytes = readFileSync(join(process.cwd(), "public", "siteo-logo.jpg"));
+  return `data:image/jpeg;base64,${bytes.toString("base64")}`;
+}
 
-// Social card: deep-green field with the full-color logo mark (hero moment) +
-// name. Uses ImageResponse's built-in font fallback (no external font fetch).
 export default function OpengraphImage() {
+  const logo = logoDataUri();
   return new ImageResponse(
     (
       <div
@@ -29,28 +29,9 @@ export default function OpengraphImage() {
           padding: "80px",
         }}
       >
-        <div style={{ display: "flex", gap: "12px" }}>
-          {BLOCKS.map((b) => (
-            <div
-              key={b.letter}
-              style={{
-                width: "104px",
-                height: "104px",
-                backgroundColor: b.color,
-                borderRadius: "10px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#ffffff",
-                fontSize: "64px",
-                fontWeight: 800,
-              }}
-            >
-              {b.letter}
-            </div>
-          ))}
-        </div>
-        <div style={{ marginTop: "48px", fontSize: "46px", color: "#f4f7f4", maxWidth: "900px" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={logo} width={560} height={140} alt="SITEO" />
+        <div style={{ marginTop: "48px", fontSize: "46px", color: "#f4f7f4", maxWidth: "920px" }}>
           Seervi International Trade &amp; Education Organization
         </div>
         <div style={{ marginTop: "16px", fontSize: "26px", color: "#c9a227" }}>

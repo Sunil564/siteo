@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { navLinks, org } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { SiteoLogo } from "@/components/brand/logo";
 import { cn } from "@/lib/utils";
 
 export function Nav() {
@@ -44,8 +44,14 @@ export function Nav() {
         )}
       >
         <Link href="/" aria-label={`${org.name} home`} className="flex items-center">
-          {/* Monochrome wordmark for dense UI; full color is reserved for hero moments. */}
-          <SiteoLogo variant="mono" tone="green" className="w-24 md:w-28" />
+          <Image
+            src="/siteo-logo.jpg"
+            alt="SITEO"
+            width={1600}
+            height={400}
+            priority
+            className="h-6 w-auto md:h-7"
+          />
         </Link>
 
         {/* Desktop links */}

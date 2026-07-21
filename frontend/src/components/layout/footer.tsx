@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { SiteoLogo } from "@/components/brand/logo";
 import { contact, footerLinks, legalLinks, org } from "@/lib/site";
 
 export function Footer() {
@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Org blurb */}
           <div className="max-w-xs">
-            <SiteoLogo variant="mono" tone="white" className="w-28" />
+            <Image src="/siteo-logo.jpg" alt="SITEO" width={1600} height={400} className="h-8 w-auto" />
             <p className="mt-4 text-sm leading-relaxed text-surface/70">{org.fullName}</p>
             <p lang="hi" className="font-hindi mt-3 text-sm text-surface/60">
               {org.tagline}
