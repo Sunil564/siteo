@@ -84,33 +84,33 @@ export const pillars: Pillar[] = [
     icon: Handshake,
     title: "Trade & Commerce",
     titleHi: "व्यापार एवं वाणिज्य",
-    body: "Connecting businesses, promoting enterprise, and opening markets across the community and beyond.",
+    body: "Connecting businesses and opening markets across the community.",
   },
   {
     icon: GraduationCap,
     title: "Education & Skill",
     titleHi: "शिक्षा एवं कौशल",
-    body: "Backing students and building skills — from school support to industry-ready training.",
+    body: "Backing students and building industry-ready skills.",
   },
   {
     icon: Users,
     title: "Community",
     titleHi: "समुदाय",
-    body: "Welfare, connection, and belonging — a platform that looks after its people at every stage of life.",
+    body: "Welfare, connection, and belonging at every stage of life.",
   },
 ];
 
 export type FocusArea = { icon: LucideIcon; title: string; body: string };
 
 export const focusAreas: FocusArea[] = [
-  { icon: Store, title: "Seervi Expo", body: "The flagship trade exhibition bringing the community's businesses together." },
-  { icon: Wrench, title: "Skill Development", body: "Practical, industry-aligned training that leads to real livelihoods." },
-  { icon: BookOpen, title: "Education Support", body: "Guidance and support for students pursuing higher education." },
-  { icon: Rocket, title: "Startup Incubation", body: "Mentoring and momentum for new founders and small enterprises." },
-  { icon: HandHeart, title: "Senior Citizen Village", body: "A planned wellness community caring for elders with dignity." },
-  { icon: TrendingUp, title: "Trade Promotion", body: "Directories, networks, and platforms that grow community trade." },
-  { icon: Handshake, title: "CSR", body: "Coordinated social responsibility that gives back with intent." },
-  { icon: Building2, title: "Community Development", body: "Institutions and infrastructure built to last for generations." },
+  { icon: Store, title: "Seervi Expo", body: "The flagship community trade exhibition." },
+  { icon: Wrench, title: "Skill Development", body: "Industry-aligned training for real livelihoods." },
+  { icon: BookOpen, title: "Education Support", body: "Guidance for students pursuing higher education." },
+  { icon: Rocket, title: "Startup Incubation", body: "Mentoring and momentum for new founders." },
+  { icon: HandHeart, title: "Senior Citizen Village", body: "A planned wellness community for elders." },
+  { icon: TrendingUp, title: "Trade Promotion", body: "Networks and directories that grow trade." },
+  { icon: Handshake, title: "CSR", body: "Social responsibility that gives back with intent." },
+  { icon: Building2, title: "Community Development", body: "Institutions built to last for generations." },
 ];
 
 /** Static expo headline stats (§6) — hardcoded, not from any database. */

@@ -1,5 +1,6 @@
 import { Hero } from "@/components/home/hero";
 import { Pillars } from "@/components/home/pillars";
+import { CommunityBand } from "@/components/home/community-band";
 import { FocusAreas } from "@/components/home/focus-areas";
 import { EventsTeaser } from "@/components/home/events-teaser";
 import { CapitalTeaser } from "@/components/home/capital-teaser";
@@ -13,6 +14,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <Pillars />
+      <CommunityBand />
       <FocusAreas />
       <EventsTeaser events={events} />
       <CapitalTeaser />

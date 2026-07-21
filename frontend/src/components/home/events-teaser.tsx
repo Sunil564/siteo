@@ -6,6 +6,7 @@ import { Placeholder } from "@/components/ui/placeholder";
 import { Reveal } from "@/components/ui/reveal";
 import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ScaleOnScroll } from "@/components/ui/scale-on-scroll";
 import { formatEventDate, MODE_LABEL } from "@/lib/format";
 import type { PublicEvent } from "@/lib/api";
 
@@ -34,12 +35,14 @@ export function EventsTeaser({ events }: { events: PublicEvent[] }) {
       <div className="mt-12">
         {next ? (
           <Reveal>
-            <Card interactive className="grid gap-8 p-0 md:grid-cols-2 md:p-0">
-              <Placeholder
-                slot={{ src: next.banner_image, alt: next.title, ratio: "16:9", kind: "event" }}
-                rounded={false}
-                className="md:h-full md:rounded-l-card"
-              />
+            <Card interactive className="grid gap-8 overflow-hidden p-0 md:grid-cols-2 md:p-0">
+              <ScaleOnScroll className="overflow-hidden md:h-full md:rounded-l-card">
+                <Placeholder
+                  slot={{ src: next.banner_image, alt: next.title, ratio: "16:9", kind: "event" }}
+                  rounded={false}
+                  className="md:h-full"
+                />
+              </ScaleOnScroll>
               <div className="flex flex-col justify-center p-6 md:p-8">
                 <span className="inline-flex w-fit rounded-full bg-brand-green/8 px-3 py-1 text-sm font-medium text-brand-green">
                   {MODE_LABEL[next.mode] ?? next.mode}

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { CountUp } from "@/components/ui/count-up";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { expoStats } from "@/lib/site";
 
@@ -40,8 +41,8 @@ export function ArchiveTeaser() {
           <dl className="grid grid-cols-3 gap-6 md:gap-4">
             {expoStats.map((s) => (
               <div key={s.label} className="text-center">
-                <dd className="font-display text-h3 font-semibold leading-none text-white md:text-h2">
-                  {s.value}
+                <dd className="font-display text-h2 font-semibold leading-none text-white md:text-h1">
+                  <CountUp value={s.value} />
                 </dd>
                 <dt className="mt-2 text-sm text-white/70">{s.label}</dt>
               </div>

@@ -7,17 +7,8 @@ import { Menu, X } from "lucide-react";
 import { navLinks, org } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
+import { SiteoLogo } from "@/components/brand/logo";
 import { cn } from "@/lib/utils";
-
-function Wordmark({ onDark = false }: { onDark?: boolean }) {
-  return (
-    <span className="font-display text-h4 font-bold tracking-tight">
-      <span className={onDark ? "text-surface" : "text-brand-green"}>SIT</span>
-      <span className="text-brand-gold">E</span>
-      <span className={onDark ? "text-surface" : "text-brand-green"}>O</span>
-    </span>
-  );
-}
 
 export function Nav() {
   const pathname = usePathname();
@@ -42,13 +33,19 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-surface/95 backdrop-blur transition-shadow",
-        scrolled && "border-b border-border",
+        "sticky top-0 z-50 bg-surface/95 backdrop-blur transition-shadow duration-300",
+        scrolled && "border-b border-border shadow-[0_2px_16px_-8px_rgba(14,59,46,0.25)]",
       )}
     >
-      <Container className="flex h-16 items-center justify-between md:h-20">
+      <Container
+        className={cn(
+          "flex items-center justify-between transition-[height] duration-300",
+          scrolled ? "h-14 md:h-16" : "h-16 md:h-20",
+        )}
+      >
         <Link href="/" aria-label={`${org.name} home`} className="flex items-center">
-          <Wordmark />
+          {/* Monochrome wordmark for dense UI; full color is reserved for hero moments. */}
+          <SiteoLogo variant="mono" tone="green" className="w-24 md:w-28" />
         </Link>
 
         {/* Desktop links */}

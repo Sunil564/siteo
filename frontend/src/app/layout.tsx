@@ -26,6 +26,7 @@ const notoDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://siteo.in"),
   title: {
     default: "SITEO — Seervi International Trade & Education Organization",
     template: "%s · SITEO",

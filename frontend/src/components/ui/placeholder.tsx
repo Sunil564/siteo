@@ -22,12 +22,15 @@ export function Placeholder({
   className,
   rounded = true,
   priority = false,
+  onDark = false,
 }: {
   slot: ImageSlot;
   caption?: string;
   className?: string;
   rounded?: boolean;
   priority?: boolean;
+  /** Styling for placement on a green/dark surface (e.g. the hero). */
+  onDark?: boolean;
 }) {
   const Icon = KIND_ICON[slot.kind];
   const shape = cn(ASPECT_CLASS[slot.ratio], rounded && "rounded-card", "overflow-hidden");
@@ -40,26 +43,42 @@ export function Placeholder({
     );
   }
 
+  const tintColor = onDark ? "var(--surface)" : "var(--brand-green)";
+
   return (
     <div
       role="img"
       aria-label={slot.alt}
       className={cn(
-        "relative flex w-full flex-col items-center justify-center gap-3 border border-border bg-brand-green/[0.04]",
+        "relative flex w-full flex-col items-center justify-center gap-3 border",
+        onDark ? "border-surface/20 bg-surface/[0.06]" : "border-border bg-brand-green/[0.04]",
         shape,
         className,
       )}
       style={{
-        backgroundImage:
-          "radial-gradient(circle at center, color-mix(in srgb, var(--brand-green) 8%, transparent) 1px, transparent 1.4px)",
+        backgroundImage: `radial-gradient(circle at center, color-mix(in srgb, ${tintColor} ${
+          onDark ? "12%" : "8%"
+        }, transparent) 1px, transparent 1.4px)`,
         backgroundSize: "16px 16px",
       }}
     >
-      <span className="flex size-14 items-center justify-center rounded-full bg-brand-green/10 text-brand-gold">
+      <span
+        className={cn(
+          "flex size-14 items-center justify-center rounded-full text-brand-gold",
+          onDark ? "bg-surface/10" : "bg-brand-green/10",
+        )}
+      >
         <Icon className="size-7" strokeWidth={1.5} aria-hidden />
       </span>
       {caption && (
-        <span className="max-w-[80%] text-center text-sm text-ink-muted">{caption}</span>
+        <span
+          className={cn(
+            "max-w-[80%] text-center text-sm",
+            onDark ? "text-surface/70" : "text-ink-muted",
+          )}
+        >
+          {caption}
+        </span>
       )}
     </div>
   );

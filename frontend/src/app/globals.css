@@ -20,11 +20,20 @@
   --border: #dde5e0;
 
   /* --- Archive era ONLY (§3 exception) — never used on SITEO org pages ---
-     "orange" end-stop unspecified in the doc; #f59e0b chosen (flag at review). */
+     "orange" end-stop unspecified in the doc; #f59e0b chosen (approved). */
   --archive-from: #a21caf;
   --archive-via: #d946ef;
   --archive-to: #f59e0b;
   --archive-gradient: linear-gradient(115deg, var(--archive-from) 0%, var(--archive-via) 55%, var(--archive-to) 100%);
+
+  /* --- Logo block colors (sampled from the SITEO wordmark) ---
+     Used at full strength only for the logo mark + the preloader's final beat.
+     They do NOT enter the general palette — the site stays green/gold (§10). */
+  --logo-s: #dd156b;
+  --logo-i: #488ecc;
+  --logo-t: #f6931e;
+  --logo-e: #6f2d8f;
+  --logo-o: #00707e;
 }
 
 @theme inline {

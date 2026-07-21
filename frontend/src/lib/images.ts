@@ -21,6 +21,12 @@ export const images = {
   homeHero: {
     src: null,
     alt: "Members of the Seervi community at a SITEO gathering",
+    ratio: "4:3",
+    kind: "people",
+  },
+  communityBand: {
+    src: null,
+    alt: "The community gathered at a SITEO event",
     ratio: "21:9",
     kind: "people",
   },
