@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/section";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { focusAreas } from "@/lib/site";
 
-/** Eight focus-area cards, vision-only (§4.1 / §1) — staggered reveal, refined
+/** Eight focus-area cards, vision-only (§4.1 / §1) - staggered reveal, refined
  *  hover. A card grid, distinct from the pillars list and the full-bleed band. */
 export function FocusAreas() {
   return (

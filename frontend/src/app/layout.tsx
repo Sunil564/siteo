@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 
-// Display serif (§4) — Fraunces for character while staying institutional.
+// Display serif (§4) - Fraunces for character while staying institutional.
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
@@ -28,11 +28,11 @@ const notoDevanagari = Noto_Sans_Devanagari({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://siteo.in"),
   title: {
-    default: "SITEO — Seervi International Trade & Education Organization",
+    default: "SITEO - Seervi International Trade & Education Organization",
     template: "%s · SITEO",
   },
   description:
-    "SITEO is a community-first organization for trade, education, and development — a permanent platform for the Seervi community and beyond.",
+    "SITEO is a community-first organization for trade, education, and development - a permanent platform for the Seervi community and beyond.",
 };
 
 export default function RootLayout({

@@ -1,4 +1,4 @@
-"""Phase 4 — enquiry tests: number format/sequencing, public submit, and admin
+"""Phase 4 - enquiry tests: number format/sequencing, public submit, and admin
 list/filter/status-transition/notes.
 """
 from __future__ import annotations

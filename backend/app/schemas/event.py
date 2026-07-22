@@ -44,7 +44,7 @@ class EventCreate(BaseModel):
 
 
 class EventUpdate(BaseModel):
-    """PATCH semantics — every field optional. `custom_fields=None` leaves the
+    """PATCH semantics - every field optional. `custom_fields=None` leaves the
     existing spec unchanged; pass `[]` to clear it.
     """
 

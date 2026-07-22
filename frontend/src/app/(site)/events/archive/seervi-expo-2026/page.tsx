@@ -14,7 +14,7 @@ import { seerviExpo2026 as expo } from "@/lib/archive";
 export const metadata: Metadata = {
   title: "Seervi Expo 2026",
   description:
-    "A retrospective of Seervi Expo 2026 — SITEO's launch event: 11,000+ attendees, 6+ industry zones, 50+ exhibitors.",
+    "A retrospective of Seervi Expo 2026 - SITEO's launch event: 11,000+ attendees, 6+ industry zones, 50+ exhibitors.",
 };
 
 export default function SeerviExpo2026Page() {

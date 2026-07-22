@@ -1,5 +1,5 @@
 /**
- * Central image config (§6). No real photos exist yet — every visual is a
+ * Central image config (§6). No real photos exist yet - every visual is a
  * branded <Placeholder>. When real images arrive they drop in here in ONE place
  * with zero layout shift (aspect ratios are fixed).
  *

@@ -11,7 +11,7 @@ import { pillars } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "SITEO is a non-profit community organization for trade, education, and development — its mission, pillars, and structure.",
+    "SITEO is a non-profit community organization for trade, education, and development - its mission, pillars, and structure.",
 };
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
         eyebrow="THE ORGANIZATION"
         eyebrowHi="संस्था परिचय"
         title="A permanent platform for the community"
-        intro="SITEO exists to bring the community's trade, education, and development under one organized, lasting institution — built to serve for generations, not for a single moment."
+        intro="SITEO exists to bring the community's trade, education, and development under one organized, lasting institution - built to serve for generations, not for a single moment."
       />
 
       <Section tone="surface">
@@ -29,14 +29,14 @@ export default function AboutPage() {
           <SectionHeading eyebrow="OUR MISSION" eyebrowHi="हमारा उद्देश्य" title="Why SITEO exists" />
           <Prose>
             <p>
-              For a long time the community&apos;s strengths — enterprise, learning, and a deep
-              instinct to look after its own — have worked in parallel, rarely under one roof. SITEO
+              For a long time the community&apos;s strengths - enterprise, learning, and a deep
+              instinct to look after its own - have worked in parallel, rarely under one roof. SITEO
               brings them together: a single organization where a business can find a market, a
               student can find support, and a family can find a community that shows up.
             </p>
             <p>
               We measure success in participation and trust, not slogans. Everything we build is
-              meant to still be standing — and still useful — decades from now.
+              meant to still be standing - and still useful - decades from now.
             </p>
           </Prose>
         </div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <Prose>
             <p>
               SITEO is a non-profit community organization, governed by an experienced board and run
-              with transparency and care. It is intentionally broad — an umbrella under which
+              with transparency and care. It is intentionally broad - an umbrella under which
               specific initiatives, events, and the community&apos;s financial arm can operate with a
               shared purpose.
             </p>

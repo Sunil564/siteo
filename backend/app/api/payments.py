@@ -1,4 +1,4 @@
-"""Payment webhook (Razorpay) — scaffolded, DORMANT (§5.3).
+"""Payment webhook (Razorpay) - scaffolded, DORMANT (§5.3).
 
 The webhook is the authoritative confirmation source for paid registrations
 (expo learning: never trust the client callback). While `payments_enabled` is

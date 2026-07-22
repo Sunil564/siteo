@@ -34,7 +34,7 @@ class EventRegistration(SQLModel, table=True):
         sa_column=sa.Column(sa.String(20), nullable=False, server_default=RegistrationStatus.confirmed.value),
     )
 
-    # Payment fields (nullable — dormant path)
+    # Payment fields (nullable - dormant path)
     payment_provider: str | None = Field(default=None, sa_column=sa.Column(sa.String(30), nullable=True))
     payment_order_id: str | None = Field(default=None, sa_column=sa.Column(sa.String(100), nullable=True))
     payment_id: str | None = Field(default=None, sa_column=sa.Column(sa.String(100), nullable=True))

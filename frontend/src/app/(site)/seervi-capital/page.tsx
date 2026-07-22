@@ -12,7 +12,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 export const metadata: Metadata = {
   title: "Seervi Capital",
   description:
-    "Seervi Capital is SITEO's financial and investment arm — supporting community businesses, startups, education, and senior welfare through capital, guidance, and investment.",
+    "Seervi Capital is SITEO's financial and investment arm - supporting community businesses, startups, education, and senior welfare through capital, guidance, and investment.",
 };
 
 const arms = [
@@ -24,12 +24,12 @@ const arms = [
   {
     icon: Compass,
     title: "Guidance",
-    body: "Mentorship and practical advice — from experienced hands who have built enterprises of their own.",
+    body: "Mentorship and practical advice - from experienced hands who have built enterprises of their own.",
   },
   {
     icon: Sprout,
     title: "Investment",
-    body: "Long-term investment in startups, education, and senior welfare — patient support for outcomes that matter to the community.",
+    body: "Long-term investment in startups, education, and senior welfare - patient support for outcomes that matter to the community.",
   },
 ];
 
@@ -40,14 +40,14 @@ export default function SeerviCapitalPage() {
         eyebrow="SEERVI CAPITAL"
         eyebrowHi="सीरवी कैपिटल"
         title="The financial and investment arm of SITEO"
-        intro="Seervi Capital supports community businesses, startups, education, and senior welfare — through capital, guidance, and investment."
+        intro="Seervi Capital supports community businesses, startups, education, and senior welfare - through capital, guidance, and investment."
       />
 
       <Section tone="surface">
         <Prose className="mx-auto text-center [&_p]:text-lg">
           <p>
             Good ideas and good people should not stall for want of backing. Seervi Capital exists to
-            make sure they don&apos;t — pairing the community&apos;s resources with the community&apos;s
+            make sure they don&apos;t - pairing the community&apos;s resources with the community&apos;s
             ambition, and doing it with patience and care rather than pressure.
           </p>
         </Prose>

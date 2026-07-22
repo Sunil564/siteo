@@ -9,7 +9,7 @@ import { org } from "@/lib/site";
 /**
  * Home hero (§4.1) as an arrival: tall flat-green field, oversized display
  * type, asymmetric text/visual split with a gold offset accent behind the
- * image. Flat color only — the gradient is the archive's signature (§3).
+ * image. Flat color only - the gradient is the archive's signature (§3).
  */
 export function Hero() {
   return (
@@ -29,7 +29,7 @@ export function Hero() {
             {org.tagline}
           </p>
           <p className="mt-4 max-w-md text-lg text-surface/80">
-            A permanent, community-first platform — built to last for generations.
+            A permanent, community-first platform - built to last for generations.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">

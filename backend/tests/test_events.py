@@ -1,4 +1,4 @@
-"""Phase 2 — event system tests: admin CRUD, public list/detail, free
+"""Phase 2 - event system tests: admin CRUD, public list/detail, free
 registration (capacity, custom fields), export, and the dormant paid path.
 """
 from __future__ import annotations

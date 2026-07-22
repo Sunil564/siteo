@@ -14,20 +14,20 @@ import { focusAreas } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Initiatives",
   description:
-    "SITEO's flagship projects and focus areas — from the SITEO Bhavan and Senior Citizen Village to skilling, education, and trade.",
+    "SITEO's flagship projects and focus areas - from the SITEO Bhavan and Senior Citizen Village to skilling, education, and trade.",
 };
 
 const flagships = [
   {
     title: "SITEO Bhavan",
     tag: "Upcoming project",
-    body: "A home for the organization — head office, hostels for students, a community health centre, consultancy support, and shared spaces including a hall, gym, and library. One address for the community to gather, learn, and be looked after.",
+    body: "A home for the organization - head office, hostels for students, a community health centre, consultancy support, and shared spaces including a hall, gym, and library. One address for the community to gather, learn, and be looked after.",
     alt: "Architectural vision of the SITEO Bhavan",
   },
   {
     title: "Senior Citizen Village",
     tag: "Upcoming project",
-    body: "A riverside wellness community for elders — a calm, ten-acre setting designed around dignity, care, and companionship in later life. A place to be cared for as part of the community, not apart from it.",
+    body: "A riverside wellness community for elders - a calm, ten-acre setting designed around dignity, care, and companionship in later life. A place to be cared for as part of the community, not apart from it.",
     alt: "Vision of the riverside Senior Citizen Village",
   },
 ] as const;
@@ -47,7 +47,7 @@ export default function InitiativesPage() {
           eyebrow="FLAGSHIP VISION"
           eyebrowHi="प्रमुख परियोजनाएँ"
           title="Projects on the horizon"
-          intro="Long-term commitments — shown as vision today, built for the community tomorrow."
+          intro="Long-term commitments - shown as vision today, built for the community tomorrow."
         />
         <div className="mt-14 flex flex-col gap-16 md:gap-24">
           {flagships.map((f, i) => {
@@ -60,7 +60,7 @@ export default function InitiativesPage() {
                   >
                     <Placeholder
                       slot={{ src: null, alt: f.alt, ratio: "4:3", kind: "building" }}
-                      caption="Vision render — coming soon"
+                      caption="Vision render - coming soon"
                     />
                   </ScaleOnScroll>
                   <div>

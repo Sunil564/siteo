@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { pillars } from "@/lib/site";
 
 /**
- * Three pillars as an editorial numbered list (§4.1) — oversized gold numerals,
+ * Three pillars as an editorial numbered list (§4.1) - oversized gold numerals,
  * hairline-separated rows. Deliberately not a card grid, to vary rhythm.
  */
 export function Pillars() {

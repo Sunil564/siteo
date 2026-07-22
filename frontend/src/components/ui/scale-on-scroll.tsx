@@ -5,7 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 
 /**
  * Gentle scale-on-scroll for large images/visuals (§ brand: restrained). The
- * child scales subtly as the element passes through the viewport. Images only —
+ * child scales subtly as the element passes through the viewport. Images only -
  * never text. Fully static under reduced motion. Keep `overflow-hidden` on the
  * wrapper so the scaled child doesn't bleed.
  */

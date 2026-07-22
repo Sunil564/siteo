@@ -1,4 +1,4 @@
-"""Generic event model — admin creates any event type (§5.1)."""
+"""Generic event model - admin creates any event type (§5.1)."""
 from __future__ import annotations
 
 from datetime import datetime

@@ -3,7 +3,7 @@ import { join } from "path";
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "SITEO — Seervi International Trade & Education Organization";
+export const alt = "SITEO - Seervi International Trade & Education Organization";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

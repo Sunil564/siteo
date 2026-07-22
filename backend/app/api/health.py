@@ -16,13 +16,13 @@ router = APIRouter(tags=["health"])
 
 @router.get("/health")
 def health() -> dict:
-    """Liveness — does the process respond?"""
+    """Liveness - does the process respond?"""
     return {"status": "ok", "app": settings.APP_NAME, "version": __version__, "env": settings.ENV}
 
 
 @router.get("/health/ready")
 def readiness(session: Annotated[Session, Depends(get_session)]) -> dict:
-    """Readiness — can we reach the database?"""
+    """Readiness - can we reach the database?"""
     try:
         session.exec(sa.text("SELECT 1"))
         db_ok = True

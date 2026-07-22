@@ -3,7 +3,7 @@
 Public:  POST /membership          submit (rate-limited); optional WhatsApp ack.
 Admin:   GET  /admin/membership    list + search.
 
-NOTE: no `from __future__ import annotations` — public router uses @limiter.limit.
+NOTE: no `from __future__ import annotations` - public router uses @limiter.limit.
 """
 from typing import Annotated
 

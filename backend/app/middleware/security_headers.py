@@ -1,7 +1,7 @@
 """Security headers middleware.
 
 Applies hardening headers to every response. This is an API backend (JSON), so
-the CSP is deliberately locked down (`default-src 'none'`) — the Next.js frontend
+the CSP is deliberately locked down (`default-src 'none'`) - the Next.js frontend
 sets its own page-level CSP with nonces.
 """
 from __future__ import annotations

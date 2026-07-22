@@ -26,7 +26,7 @@ export default function TermsPage() {
           <h2>Events &amp; registration</h2>
           <p>
             When you register for an event, please provide accurate details. Events may have limited
-            capacity, and specifics — timing, venue, or format — can change; we&apos;ll do our best to
+            capacity, and specifics - timing, venue, or format - can change; we&apos;ll do our best to
             keep you informed of any changes.
           </p>
 

@@ -44,7 +44,7 @@ from app.services import audit
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 
-# Generic auth error — do not reveal which factor failed (security checklist).
+# Generic auth error - do not reveal which factor failed (security checklist).
 _BAD_CREDS = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
 
 
@@ -82,7 +82,7 @@ def login(
     # Second factor
     if user.totp_enabled:
         if not body.totp_code:
-            # Credentials OK, but TOTP still required — no session issued yet.
+            # Credentials OK, but TOTP still required - no session issued yet.
             return LoginResponse(
                 username=user.username,
                 role=user.role,

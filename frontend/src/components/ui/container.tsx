@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Centered content column — 1200px max with 1fr gutters (§5). */
+/** Centered content column - 1200px max with 1fr gutters (§5). */
 export function Container({
   className,
   children,

@@ -1,4 +1,4 @@
-"""Key/value settings store — feature toggles and kill switches."""
+"""Key/value settings store - feature toggles and kill switches."""
 from __future__ import annotations
 
 from datetime import datetime

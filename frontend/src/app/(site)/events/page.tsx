@@ -12,7 +12,7 @@ import { formatEventDate, MODE_LABEL } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Events",
-  description: "Upcoming SITEO events — sessions, meetups, and gatherings open for registration.",
+  description: "Upcoming SITEO events - sessions, meetups, and gatherings open for registration.",
 };
 
 export default async function EventsPage() {
@@ -73,7 +73,7 @@ export default async function EventsPage() {
               <CalendarDays className="size-7" strokeWidth={1.5} />
             </span>
             <p className="text-lg text-ink">No upcoming events right now.</p>
-            <p className="text-base text-ink-muted">Check back soon — new events are on the way.</p>
+            <p className="text-base text-ink-muted">Check back soon - new events are on the way.</p>
           </Card>
         )}
 

@@ -1,5 +1,5 @@
 /**
- * Static archive content (§6). NOT from any database — these are Sunil-provided
+ * Static archive content (§6). NOT from any database - these are Sunil-provided
  * headline facts, hardcoded. The photo gallery is built from placeholder slots
  * so real images drop in here with a one-file change (set `src`).
  */
@@ -23,7 +23,7 @@ function galleryPhotos(alts: string[]): ImageSlot[] {
 export const seerviExpo2026: ArchiveEvent = {
   slug: "seervi-expo-2026",
   title: "Seervi Expo 2026",
-  dates: "June 27–28, 2026",
+  dates: "June 27-28, 2026",
   venue: "Varin International Residential School, Tumkur",
   stats: [
     { label: "Attendees", value: "11,000+" },
@@ -32,7 +32,7 @@ export const seerviExpo2026: ArchiveEvent = {
     { label: "Business Sessions", value: "Both days" },
   ],
   story: [
-    "Seervi Expo 2026 was SITEO's launch event — two days when the community's businesses, students, and families came together in one place for the first time at this scale.",
+    "Seervi Expo 2026 was SITEO's launch event - two days when the community's businesses, students, and families came together in one place for the first time at this scale.",
     "It was community-driven from the start: exhibitors, volunteers, and visitors who wanted to see what the community could build together. It became the first step toward SITEO as a lasting platform.",
   ],
   // Public partner names only. To be filled in when confirmed.

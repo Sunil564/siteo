@@ -77,7 +77,7 @@ export function EventsTeaser({ events }: { events: PublicEvent[] }) {
               <CalendarDays className="size-7" strokeWidth={1.5} />
             </span>
             <p className="text-lg text-ink">No upcoming events right now.</p>
-            <p className="text-base text-ink-muted">Check back soon — new events are on the way.</p>
+            <p className="text-base text-ink-muted">Check back soon - new events are on the way.</p>
           </Card>
         )}
       </div>

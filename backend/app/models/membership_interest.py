@@ -1,4 +1,4 @@
-"""Membership interest submissions (generic, no payment) — §4.8, §7."""
+"""Membership interest submissions (generic, no payment) - §4.8, §7."""
 from __future__ import annotations
 
 from datetime import datetime

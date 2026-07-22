@@ -1,4 +1,4 @@
-"""Membership-interest schemas — public submit + admin list (§4.8)."""
+"""Membership-interest schemas - public submit + admin list (§4.8)."""
 from __future__ import annotations
 
 from datetime import datetime

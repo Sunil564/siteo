@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Signature eyebrow label (§4/§7): small caps, letter-spaced, gold, above a
- * heading. Bilingual when `hi` is given — Devanagari then " / " then Latin,
+ * heading. Bilingual when `hi` is given - Devanagari then " / " then Latin,
  * mirroring the source deck (संस्था परिचय / THE ORGANIZATION).
  */
 export function Eyebrow({

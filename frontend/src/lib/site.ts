@@ -113,7 +113,7 @@ export const focusAreas: FocusArea[] = [
   { icon: Building2, title: "Community Development", body: "Institutions built to last for generations." },
 ];
 
-/** Static expo headline stats (§6) — hardcoded, not from any database. */
+/** Static expo headline stats (§6) - hardcoded, not from any database. */
 export const expoStats = [
   { value: "11,000+", label: "Attendees" },
   { value: "6+", label: "Industry Zones" },

@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import type { LucideIcon } from "lucide-react";
 
 /**
- * Line icon in a filled green circle (§7) — the deck's signature icon
+ * Line icon in a filled green circle (§7) - the deck's signature icon
  * treatment. Gold icon on green by default; `tone="soft"` for a lighter green
  * fill with a green icon (use on dark surfaces where a solid green disappears).
  */

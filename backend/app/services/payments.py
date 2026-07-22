@@ -1,4 +1,4 @@
-"""Razorpay payment scaffold — built, but DORMANT for v1 (§5.3).
+"""Razorpay payment scaffold - built, but DORMANT for v1 (§5.3).
 
 Everything here is gated on the settings_kv `payments_enabled` toggle, which is
 seeded to false. The free registration path never touches this module. When a
@@ -31,7 +31,7 @@ def is_active(session: Session) -> bool:
 
 
 def create_order(amount_paise: int, receipt: str) -> dict:
-    """Create a Razorpay order. Dormant — raises until wired up + enabled.
+    """Create a Razorpay order. Dormant - raises until wired up + enabled.
 
     When implemented this will POST to
     https://api.razorpay.com/v1/orders with basic-auth (key_id:key_secret)

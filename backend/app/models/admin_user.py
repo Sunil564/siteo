@@ -20,7 +20,7 @@ class AdminUser(SQLModel, table=True):
         sa_column=sa.Column(sa.String(20), nullable=False, server_default=AdminRole.volunteer.value),
     )
 
-    # TOTP (two-factor) — secret stored, enabled only after first successful verify.
+    # TOTP (two-factor) - secret stored, enabled only after first successful verify.
     totp_secret: str | None = Field(default=None, sa_column=sa.Column(sa.String(64), nullable=True))
     totp_enabled: bool = Field(
         default=False, sa_column=sa.Column(sa.Boolean, nullable=False, server_default=sa.false())

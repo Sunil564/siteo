@@ -1,4 +1,4 @@
-"""Enquiry schemas — public submit + admin management (§4.9)."""
+"""Enquiry schemas - public submit + admin management (§4.9)."""
 from __future__ import annotations
 
 from datetime import datetime
@@ -53,7 +53,7 @@ class EnquiryAdminOut(BaseModel):
 
 class EnquiryAdminUpdate(BaseModel):
     """Admin patch: move status along the workflow and/or set internal notes.
-    Both optional — send either or both.
+    Both optional - send either or both.
     """
 
     status: EnquiryStatus | None = None

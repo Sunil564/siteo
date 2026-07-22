@@ -8,7 +8,7 @@ Admin (require_admin):
   GET   /admin/enquiries/{id}  detail
   PATCH /admin/enquiries/{id}  status transition and/or internal notes
 
-NOTE: no `from __future__ import annotations` — the public router uses the
+NOTE: no `from __future__ import annotations` - the public router uses the
 slowapi `@limiter.limit` decorator (see api/auth.py for the rationale).
 """
 from typing import Annotated

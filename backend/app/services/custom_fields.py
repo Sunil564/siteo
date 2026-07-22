@@ -14,7 +14,7 @@ from typing import Any
 from pydantic import BaseModel, Field, field_validator, model_validator
 
 _EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
-# Lenient international phone: optional +, digits/spaces/hyphens, 7–15 digits.
+# Lenient international phone: optional +, digits/spaces/hyphens, 7-15 digits.
 _TEL_RE = re.compile(r"^\+?[0-9][0-9\s\-]{5,18}[0-9]$")
 
 MAX_TEXT_LEN = 1000
@@ -55,7 +55,7 @@ class CustomFieldSpec(BaseModel):
 def validate_field_specs(raw: list[dict[str, Any]] | None) -> list[dict[str, Any]]:
     """Validate/normalise an event's custom_fields definition. Raises ValueError
     (via Pydantic) on a malformed spec. Returns plain dicts ready for JSON storage.
-    Duplicate labels are rejected — answers are keyed by label.
+    Duplicate labels are rejected - answers are keyed by label.
     """
     if not raw:
         return []

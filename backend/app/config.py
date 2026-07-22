@@ -55,7 +55,7 @@ class Settings(BaseSettings):
     # --- Enquiry numbering ---
     ENQUIRY_PREFIX: str = "SITEO-ENQ"
 
-    # --- WhatsApp (Meta Cloud API via Vahini WABA) — transactional only ---
+    # --- WhatsApp (Meta Cloud API via Vahini WABA) - transactional only ---
     WHATSAPP_ENABLED: bool = False
     WHATSAPP_PHONE_NUMBER_ID: str | None = None
     # WABA id is needed to read message-template metadata (language + variable
@@ -73,7 +73,7 @@ class Settings(BaseSettings):
     WHATSAPP_TEMPLATE_ENQUIRY_ACK: str = "enquiry_ack"
     WHATSAPP_TEMPLATE_MEMBERSHIP_ACK: str = "membership_ack"
 
-    # --- Payments (Razorpay) — dormant, behind settings toggle ---
+    # --- Payments (Razorpay) - dormant, behind settings toggle ---
     RAZORPAY_KEY_ID: str | None = None
     RAZORPAY_KEY_SECRET: str | None = None
     RAZORPAY_WEBHOOK_SECRET: str | None = None

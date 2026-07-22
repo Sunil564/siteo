@@ -1,7 +1,7 @@
 """WhatsApp transactional confirmations via Meta Cloud API (Vahini WABA).
 
 Scope (locked in the build plan, §5.2 / §8):
-- ONLY the on-register event confirmation. NO broadcast — out of scope.
+- ONLY the on-register event confirmation. NO broadcast - out of scope.
 - Two templates, selected by event mode:
     virtual   -> WHATSAPP_TEMPLATE_EVENT_VIRTUAL   (includes the join link)
     in_person -> WHATSAPP_TEMPLATE_EVENT_PHYSICAL  (includes the venue)
@@ -11,7 +11,7 @@ Scope (locked in the build plan, §5.2 / §8):
 - Before sending we verify the template against the WABA: it must exist, be
   APPROVED, and its BODY variable count must match what we send. We send using
   the template's own declared language code (never a guessed one). This is the
-  guard for the expo failure — Meta error 132001, language-code mismatch.
+  guard for the expo failure - Meta error 132001, language-code mismatch.
 
 Variable structure assumed for each template (count + order). Templates don't
 exist in Meta yet; create them in WhatsApp Manager to match exactly:
@@ -30,11 +30,11 @@ exist in Meta yet; create them in WhatsApp Manager to match exactly:
     {{4}} venue  (hybrid: venue text + a "Join online: <link>" line appended)
     {{5}} reference id
 
-  enquiry_ack             (BODY, 2 variables)  — §4.9, sends the enquiry number back
+  enquiry_ack             (BODY, 2 variables)  - §4.9, sends the enquiry number back
     {{1}} name
     {{2}} enquiry number (e.g. SITEO-ENQ-2026-00042)
 
-  membership_ack          (BODY, 1 variable)   — §4.8, optional acknowledgement
+  membership_ack          (BODY, 1 variable)   - §4.8, optional acknowledgement
     {{1}} name
 """
 from __future__ import annotations
@@ -264,7 +264,7 @@ def send_template(session: Session, *, template: str, phone: str, variables: lis
     if meta.status != "APPROVED":
         return SendResult(sent=False, template=template, skipped_reason=f"template status {meta.status}")
     if meta.body_param_count != len(variables):
-        # Exactly the class of mismatch that triggers 132001 — refuse to send.
+        # Exactly the class of mismatch that triggers 132001 - refuse to send.
         return SendResult(
             sent=False,
             template=template,

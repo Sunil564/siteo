@@ -19,7 +19,7 @@ export default function PrivacyPage() {
 
           <h2>What we collect</h2>
           <p>
-            We only collect what you give us through our forms — typically your name, phone number,
+            We only collect what you give us through our forms - typically your name, phone number,
             and (optionally) email, along with the details relevant to your enquiry, event
             registration, or membership interest.
           </p>
@@ -34,7 +34,7 @@ export default function PrivacyPage() {
           <h2>WhatsApp messages</h2>
           <p>
             Confirmations and acknowledgements are sent over WhatsApp using the number you provide.
-            We use WhatsApp only for these transactional messages — not for bulk marketing.
+            We use WhatsApp only for these transactional messages - not for bulk marketing.
           </p>
 
           <h2>What we don&apos;t do</h2>

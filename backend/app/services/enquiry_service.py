@@ -1,7 +1,7 @@
 """Enquiry-number generation (§4.9, §7).
 
 Format: <PREFIX>-<year>-<NNNNN>, e.g. SITEO-ENQ-2026-00042.
-- Sequential per calendar year (year taken in Asia/Kolkata — the org's timezone).
+- Sequential per calendar year (year taken in Asia/Kolkata - the org's timezone).
 - Guaranteed unique under concurrent submissions: the per-year counter row is
   incremented under a row lock (SELECT ... FOR UPDATE on Postgres), so parallel
   requests serialise on it. The `enquiries.enquiry_no` UNIQUE index is a final
@@ -44,7 +44,7 @@ def _locked_counter(session: Session, year: int) -> EnquiryCounter:
             session.add(row)
             session.flush()
     except IntegrityError:
-        # Created concurrently between our SELECT and INSERT — re-fetch locked.
+        # Created concurrently between our SELECT and INSERT - re-fetch locked.
         row = session.exec(
             select(EnquiryCounter).where(EnquiryCounter.year == year).with_for_update()
         ).first()

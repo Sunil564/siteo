@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  SITEO design tokens — implemented from SITEO_BRAND_DIRECTION.md (§3 color,
+  SITEO design tokens - implemented from SITEO_BRAND_DIRECTION.md (§3 color,
   §4 type, §5 spacing). The doc's literal token names live in :root as the
   single source of truth; @theme maps them to Tailwind utilities so components
   never hardcode a hex or px value (§10).
@@ -19,7 +19,7 @@
   --ink-muted: #5a6b64;
   --border: #dde5e0;
 
-  /* --- Archive era ONLY (§3 exception) — never used on SITEO org pages ---
+  /* --- Archive era ONLY (§3 exception) - never used on SITEO org pages ---
      "orange" end-stop unspecified in the doc; #f59e0b chosen (approved). */
   --archive-from: #a21caf;
   --archive-via: #d946ef;
@@ -28,7 +28,7 @@
 
   /* --- Logo block colors (sampled from the SITEO wordmark) ---
      Used at full strength only for the logo mark + the preloader's final beat.
-     They do NOT enter the general palette — the site stays green/gold (§10). */
+     They do NOT enter the general palette - the site stays green/gold (§10). */
   --logo-s: #dd156b;
   --logo-i: #488ecc;
   --logo-t: #f6931e;
@@ -48,12 +48,12 @@
   --color-ink-muted: var(--ink-muted);
   --color-border: var(--border);
 
-  /* Fonts (§4) — CSS vars injected by next/font in layout.tsx */
+  /* Fonts (§4) - CSS vars injected by next/font in layout.tsx */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
   --font-devanagari: var(--font-noto-devanagari), var(--font-inter), sans-serif;
 
-  /* Type scale — 1.25 ratio (§4). Line-heights: headings 1.15–1.25, body 1.6–1.7. */
+  /* Type scale - 1.25 ratio (§4). Line-heights: headings 1.15-1.25, body 1.6-1.7. */
   --text-display: 3.815rem;
   --text-display--line-height: 1.05;
   --text-display--font-weight: 600;
@@ -76,7 +76,7 @@
   --text-sm: 0.8rem;
   --text-sm--line-height: 1.5;
 
-  /* Radius — 8px everywhere (§6/§7) */
+  /* Radius - 8px everywhere (§6/§7) */
   --radius-card: 0.5rem;
 
   /* Layout widths (§5) */
@@ -104,7 +104,7 @@
     font-weight: 600;
     text-wrap: balance;
   }
-  /* Gold focus ring everywhere — never outline:none (§9) */
+  /* Gold focus ring everywhere - never outline:none (§9) */
   :focus-visible {
     outline: 2px solid var(--brand-gold);
     outline-offset: 2px;

@@ -2,7 +2,7 @@
 free registration flow (§5.2).
 
 NOTE: like api/auth.py, this module intentionally does NOT use
-`from __future__ import annotations` — the slowapi `@limiter.limit` wrapper makes
+`from __future__ import annotations` - the slowapi `@limiter.limit` wrapper makes
 FastAPI resolve stringized annotations against slowapi's globals, misclassifying
 body/deps as query params.
 """

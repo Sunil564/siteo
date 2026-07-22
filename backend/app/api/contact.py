@@ -3,7 +3,7 @@
 Public:  POST /contact          submit (rate-limited).
 Admin:   GET  /admin/contact    list + search.
 
-NOTE: no `from __future__ import annotations` — public router uses @limiter.limit.
+NOTE: no `from __future__ import annotations` - public router uses @limiter.limit.
 """
 from typing import Annotated
 

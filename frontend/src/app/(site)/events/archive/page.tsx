@@ -10,13 +10,13 @@ import { archiveEvents } from "@/lib/archive";
 
 export const metadata: Metadata = {
   title: "Events Archive",
-  description: "A look back at past SITEO events, beginning with the launch — Seervi Expo 2026.",
+  description: "A look back at past SITEO events, beginning with the launch - Seervi Expo 2026.",
 };
 
 export default function ArchivePage() {
   return (
     <>
-      {/* Purple-era hero — the archive has its own identity (§3 exception). */}
+      {/* Purple-era hero - the archive has its own identity (§3 exception). */}
       <section className="text-white" style={{ backgroundImage: "var(--archive-gradient)" }}>
         <Container className="py-16 md:py-24">
           <div className="max-w-3xl">

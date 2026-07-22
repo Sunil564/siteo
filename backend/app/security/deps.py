@@ -15,7 +15,7 @@ from app.models.common import AdminRole
 from app.security.cookies import ACCESS_COOKIE
 from app.security.tokens import ACCESS_TOKEN_TYPE, decode_token
 
-# Generic error — never leak whether the token or the user was the problem.
+# Generic error - never leak whether the token or the user was the problem.
 _UNAUTH = HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authenticated")
 
 # Role ordering for hierarchical checks.

@@ -6,12 +6,12 @@ import { LOGO_BLOCKS } from "./logo";
 /**
  * First-visit preloader (§ brand: restrained motion). Five blocks (S·I·T·E·O)
  * assemble staggered in green tones with gold edges, a gold rule draws beneath,
- * then the blocks resolve to the logo's real colors and the lockup lifts away —
+ * then the blocks resolve to the logo's real colors and the lockup lifts away -
  * bridging the multicolor mark with the site's green/gold system.
  *
  * Rules honored:
  *  - ≤ ~1.2s total.
- *  - Once per session (sessionStorage) — skipped on internal nav + return visits.
+ *  - Once per session (sessionStorage) - skipped on internal nav + return visits.
  *  - Preview anytime with ?preloader in the URL (forces a replay, no flag write).
  *  - Never delays content: the page renders underneath; this only covers + fades.
  *    Removed before paint on return visits.
@@ -43,7 +43,7 @@ export function Preloader() {
       try {
         alreadyShown = sessionStorage.getItem(FLAG) === "1";
       } catch {
-        /* storage blocked — treat as first visit */
+        /* storage blocked - treat as first visit */
       }
       if (alreadyShown) {
         setPhase("done"); // removed before paint → no flash on return visits

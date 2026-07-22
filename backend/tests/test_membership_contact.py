@@ -1,4 +1,4 @@
-"""Phase 4 — membership + contact submission tests."""
+"""Phase 4 - membership + contact submission tests."""
 from __future__ import annotations
 
 CREDS = {"username": "root", "password": "SuperSecret123!"}
