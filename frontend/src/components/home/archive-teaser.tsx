@@ -18,7 +18,7 @@ export function ArchiveTeaser() {
       style={{ backgroundImage: "var(--archive-gradient)" }}
     >
       <Container className="py-16 md:py-24">
-        <div className="grid items-center gap-10 md:grid-cols-[1.3fr_1fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
           <div>
             <Eyebrow onDark className="text-white/80">
               THE EXPO ERA · 2026
@@ -38,10 +38,10 @@ export function ArchiveTeaser() {
             </div>
           </div>
 
-          <dl className="grid grid-cols-3 gap-6 md:gap-4">
+          <dl className="grid grid-cols-3 gap-3 sm:gap-4">
             {expoStats.map((s) => (
-              <div key={s.label} className="text-center">
-                <dd className="font-display text-h2 font-semibold leading-none text-white md:text-h1">
+              <div key={s.label} className="min-w-0 text-center">
+                <dd className="whitespace-nowrap font-display text-h4 font-semibold leading-none tabular-nums text-white sm:text-h3 lg:text-h2">
                   <CountUp value={s.value} />
                 </dd>
                 <dt className="mt-2 text-sm text-white/70">{s.label}</dt>

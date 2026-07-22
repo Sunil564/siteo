@@ -19,11 +19,13 @@ import { LOGO_BLOCKS } from "./logo";
  *  - prefers-reduced-motion: static colored logo, quick fade, no stagger.
  */
 const FLAG = "siteo_preloader_v1";
-const STAGGER = 80;
-const ENTER_MS = 320;
-const RESOLVE_AT = 640;
-const EXIT_AT = 980;
-const END_AT = 1220;
+const STAGGER = 110;
+const ENTER_MS = 400;
+// Timeline (ms): blocks assemble (staggered), then resolve to real colors and
+// HOLD on the full-color logo so it registers, then lift away. ~1.9s total.
+const RESOLVE_AT = 980;
+const EXIT_AT = 1560;
+const END_AT = 1920;
 
 type Phase = "pending" | "enter" | "resolve" | "exit" | "done";
 
