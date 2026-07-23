@@ -34,6 +34,15 @@
   --logo-t: #f6931e;
   --logo-e: #6f2d8f;
   --logo-o: #00707e;
+
+  /* --- Premium finishes: gradients + gloss on the same palette ---
+     A tasteful override of the doc's flat-color rule (user direction). Kept
+     subtle so it reads premium/institutional, not startup-flashy. */
+  --brand-green-dark: #0a2f23;
+  --gradient-green: linear-gradient(157deg, var(--brand-green-light) 0%, var(--brand-green) 52%, var(--brand-green-dark) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--brand-gold-soft) 0%, var(--brand-gold) 55%, #b28e1e 100%);
+  --glow-gold: radial-gradient(60% 60% at 70% 20%, rgba(201, 162, 39, 0.22) 0%, rgba(201, 162, 39, 0) 70%);
+  --card-sheen: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 42%);
 }
 
 @theme inline {
@@ -124,6 +133,71 @@
     font-size: 1.06em;
     line-height: 1.75;
   }
+
+  /* Premium gradient surfaces */
+  .bg-gradient-green {
+    background-image: var(--gradient-green);
+  }
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+
+  /* Glossy gold button surface (used by Button primary). */
+  .gloss-gold {
+    background-image: var(--gradient-gold);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.45),
+      0 8px 20px -10px rgba(201, 162, 39, 0.7);
+    transition: filter 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  }
+  .gloss-gold:hover {
+    filter: brightness(1.05);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.55),
+      0 12px 26px -10px rgba(201, 162, 39, 0.8);
+  }
+
+  /* Subtle top sheen for cards (premium light-catch). */
+  .card-sheen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: var(--card-sheen);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* Animated logo-color shimmer that runs inside heading text. Mostly light,
+     with thin glints of the SITEO logo colors sweeping across - a subtle
+     "twinkle". Falls back to solid surface color under reduced motion. */
+  .brand-shimmer {
+    background-image: linear-gradient(
+      100deg,
+      var(--surface) 0 14%,
+      var(--logo-s) 20%,
+      var(--surface) 27% 40%,
+      var(--logo-i) 46%,
+      var(--surface) 53% 63%,
+      var(--logo-t) 69%,
+      var(--surface) 76% 86%,
+      var(--logo-e) 92%,
+      var(--surface) 99% 100%
+    );
+    background-size: 220% 100%;
+    background-position: 130% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: brand-shimmer 8s linear infinite;
+  }
+}
+
+@keyframes brand-shimmer {
+  to {
+    background-position: -40% 0;
+  }
 }
 
 /* Honour reduced-motion globally in addition to Framer Motion's own handling (§7/§9) */
@@ -133,5 +207,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  /* Shimmer becomes a solid, legible heading. */
+  .brand-shimmer {
+    background-image: none !important;
+    color: var(--surface) !important;
+    -webkit-text-fill-color: var(--surface) !important;
   }
 }

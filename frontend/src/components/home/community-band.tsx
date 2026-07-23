@@ -12,7 +12,7 @@ import { images } from "@/lib/images";
 export function CommunityBand() {
   return (
     <section
-      className="relative flex h-[380px] items-center overflow-hidden bg-brand-green text-surface md:h-[460px]"
+      className="relative flex h-[380px] items-center overflow-hidden bg-gradient-green text-surface md:h-[460px]"
       aria-label={images.communityBand.alt}
     >
       {/* Visual layer (subtle scale on scroll) */}

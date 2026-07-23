@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
  *  qualitative, no figures. */
 export function CapitalTeaser() {
   return (
-    <section className="bg-brand-green text-surface">
+    <section className="bg-gradient-green text-surface">
       <Container className="py-20 md:py-28">
         <Reveal className="mx-auto flex max-w-[var(--container-readable)] flex-col items-center text-center">
           <Eyebrow hi="सीरवी कैपिटल" onDark>

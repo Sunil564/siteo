@@ -7,21 +7,24 @@ import { images } from "@/lib/images";
 import { org } from "@/lib/site";
 
 /**
- * Home hero (§4.1) as an arrival: tall flat-green field, oversized display
- * type, asymmetric text/visual split with a gold offset accent behind the
- * image. Flat color only - the gradient is the archive's signature (§3).
+ * Home hero (§4.1) as an arrival: deep-green gradient field with a soft gold
+ * glow, oversized display type, asymmetric text/visual split. The heading runs
+ * an animated logo-color shimmer (subtle "twinkle") through the wordmark.
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-green text-surface">
-      <Container className="grid min-h-[86vh] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
+    <section className="relative overflow-hidden bg-gradient-green text-surface">
+      {/* Soft gold glow for premium depth */}
+      <div aria-hidden className="pointer-events-none absolute inset-0" style={{ backgroundImage: "var(--glow-gold)" }} />
+
+      <Container className="relative z-10 grid min-h-[86vh] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
         {/* Text */}
         <div className="max-w-xl">
           <Eyebrow hi="व्यापार · शिक्षा · विकास" onDark>
             TRADE · EDUCATION · DEVELOPMENT
           </Eyebrow>
 
-          <h1 className="mt-6 text-h1 text-surface md:text-display">{org.fullName}</h1>
+          <h1 className="brand-shimmer mt-6 text-h1 md:text-display">{org.fullName}</h1>
 
           <div className="mt-6 h-px w-24 bg-brand-gold" aria-hidden />
 

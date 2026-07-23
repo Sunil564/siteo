@@ -22,7 +22,7 @@ const sizes: Record<Size, string> = {
 function variantClasses(variant: Variant, onDark: boolean): string {
   switch (variant) {
     case "primary":
-      return "bg-brand-gold text-brand-green hover:bg-brand-gold-soft";
+      return "gloss-gold text-brand-green";
     case "secondary":
       return onDark
         ? "border border-surface/60 text-surface hover:bg-surface hover:text-brand-green"

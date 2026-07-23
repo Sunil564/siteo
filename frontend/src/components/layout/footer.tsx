@@ -7,7 +7,7 @@ import { contact, footerLinks, legalLinks, org } from "@/lib/site";
 export function Footer() {
   const year = 2026; // static; site launch year. Bump when needed.
   return (
-    <footer className="bg-brand-green text-surface">
+    <footer className="bg-gradient-green text-surface">
       <Container className="py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Org blurb */}

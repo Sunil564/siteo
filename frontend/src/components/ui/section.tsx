@@ -25,7 +25,7 @@ export function Section({
   const tones = {
     surface: "bg-surface text-ink",
     card: "bg-surface-card text-ink",
-    green: "bg-brand-green text-surface",
+    green: "bg-gradient-green text-surface",
   };
   return (
     <Tag className={cn("py-12 md:py-16 lg:py-24", tones[tone], className)} {...rest}>

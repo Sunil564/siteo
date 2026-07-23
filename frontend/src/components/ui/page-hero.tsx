@@ -24,7 +24,7 @@ export function PageHero({
 }) {
   const onGreen = tone === "green";
   return (
-    <section className={cn(onGreen ? "bg-brand-green text-surface" : "bg-surface text-ink")}>
+    <section className={cn(onGreen ? "bg-gradient-green text-surface" : "bg-surface text-ink")}>
       <Container className="py-16 md:py-24">
         <div className="max-w-3xl">
           {eyebrow && (

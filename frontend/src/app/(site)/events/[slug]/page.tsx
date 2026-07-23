@@ -34,7 +34,7 @@ export default async function EventDetailPage({ params }: Params) {
   return (
     <>
       {/* Header */}
-      <section className="bg-brand-green text-surface">
+      <section className="bg-gradient-green text-surface">
         <Container className="py-14 md:py-20">
           <Link
             href="/events"

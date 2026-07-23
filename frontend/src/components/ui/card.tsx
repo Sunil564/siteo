@@ -17,9 +17,9 @@ export function Card({
   return (
     <div
       className={cn(
-        "rounded-card border border-border bg-surface-card p-6 md:p-8",
+        "rounded-card border border-border bg-surface-card p-6 shadow-[0_1px_2px_rgba(14,59,46,0.04),0_10px_30px_-18px_rgba(14,59,46,0.16)] md:p-8",
         interactive &&
-          "transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[0_12px_32px_-16px_rgba(14,59,46,0.35)]",
+          "transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-gold/50 hover:shadow-[0_16px_40px_-18px_rgba(14,59,46,0.4)]",
         className,
       )}
     >
