@@ -31,6 +31,7 @@ export function Nav() {
   }, [open]);
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-50 bg-surface/95 backdrop-blur transition-shadow duration-300",
@@ -90,27 +91,32 @@ export function Nav() {
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </Container>
+    </header>
 
-      {/* Mobile full-screen overlay */}
-      {open && (
-        <div className="fixed inset-0 top-16 z-40 bg-surface md:hidden">
-          <Container className="flex flex-col gap-1 py-6">
+    {/* Mobile full-screen overlay. Rendered as a SIBLING of <header> (not a
+        child) so the header's backdrop-blur does not become its containing
+        block and collapse the fixed positioning. Opaque, full viewport. */}
+    {open && (
+      <div className="fixed inset-0 z-40 bg-surface md:hidden">
+        <Container className="flex flex-col gap-1 px-6 pb-8 pt-20">
+          <nav aria-label="Mobile" className="flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-11 items-center border-b border-border text-h4 text-brand-green"
+                className="flex min-h-14 items-center border-b border-border text-h4 text-brand-green"
               >
                 {link.label}
               </Link>
             ))}
-            <Button href="/membership" className="mt-6 w-full" onClick={() => setOpen(false)}>
-              Get Involved
-            </Button>
-          </Container>
-        </div>
-      )}
-    </header>
+          </nav>
+          <Button href="/membership" className="mt-8 w-full" onClick={() => setOpen(false)}>
+            Get Involved
+          </Button>
+        </Container>
+      </div>
+    )}
+    </>
   );
 }
