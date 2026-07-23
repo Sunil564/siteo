@@ -28,10 +28,10 @@ export const contact = {
   phone: "+91 70264 97770",
   phoneHref: "tel:+917026497770",
   whatsappHref: "https://wa.me/917026497770",
-  instagram: "seervibusinessexpo",
-  instagramHref: "https://instagram.com/seervibusinessexpo",
-  email: "seervibusinessexpo@gmail.com",
-  emailHref: "mailto:seervibusinessexpo@gmail.com",
+  instagram: "siteo.official.in",
+  instagramHref: "https://www.instagram.com/siteo.official.in",
+  email: "support@siteo.in",
+  emailHref: "mailto:support@siteo.in",
 };
 
 export type NavLink = { label: string; href: string };
