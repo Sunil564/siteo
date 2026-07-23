@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -5,6 +6,17 @@ import { Eyebrow } from "@/components/ui/eyebrow";
 import { Placeholder } from "@/components/ui/placeholder";
 import { images } from "@/lib/images";
 import { org } from "@/lib/site";
+
+// The org name's five words spell S-I-T-E-O by first letter, so each word
+// twinkles in its matching logo color.
+const HEADING_WORDS: { text: string; glint?: string }[] = [
+  { text: "Seervi", glint: "var(--logo-s)" },
+  { text: "International", glint: "var(--logo-i)" },
+  { text: "Trade", glint: "var(--logo-t)" },
+  { text: "&" },
+  { text: "Education", glint: "var(--logo-e)" },
+  { text: "Organization", glint: "var(--logo-o)" },
+];
 
 /**
  * Home hero (§4.1) as an arrival: deep-green gradient field with a soft gold
@@ -24,7 +36,23 @@ export function Hero() {
             TRADE · EDUCATION · DEVELOPMENT
           </Eyebrow>
 
-          <h1 className="brand-shimmer mt-6 text-h1 md:text-display">{org.fullName}</h1>
+          <h1 className="mt-6 text-h1 text-surface md:text-display">
+            {HEADING_WORDS.map((w, i) => (
+              <Fragment key={i}>
+                {i > 0 ? " " : null}
+                {w.glint ? (
+                  <span
+                    className="word-shimmer"
+                    style={{ "--glint": w.glint, animationDelay: `${i * 0.5}s` } as React.CSSProperties}
+                  >
+                    {w.text}
+                  </span>
+                ) : (
+                  w.text
+                )}
+              </Fragment>
+            ))}
+          </h1>
 
           <div className="mt-6 h-px w-24 bg-brand-gold" aria-hidden />
 

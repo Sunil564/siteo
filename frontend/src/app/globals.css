@@ -168,21 +168,16 @@
     pointer-events: none;
   }
 
-  /* Animated logo-color shimmer that runs inside heading text. Mostly light,
-     with thin glints of the SITEO logo colors sweeping across - a subtle
-     "twinkle". Falls back to solid surface color under reduced motion. */
-  .brand-shimmer {
+  /* Per-word shimmer: a single glint of the word's own logo color (set via
+     --glint) sweeps across the word - so Seervi twinkles pink (S), International
+     blue (I), Trade orange (T), Education purple (E), Organization teal (O).
+     Falls back to solid surface color under reduced motion. */
+  .word-shimmer {
     background-image: linear-gradient(
       100deg,
-      var(--surface) 0 14%,
-      var(--logo-s) 20%,
-      var(--surface) 27% 40%,
-      var(--logo-i) 46%,
-      var(--surface) 53% 63%,
-      var(--logo-t) 69%,
-      var(--surface) 76% 86%,
-      var(--logo-e) 92%,
-      var(--surface) 99% 100%
+      var(--surface) 0 40%,
+      var(--glint, var(--surface)) 50%,
+      var(--surface) 60% 100%
     );
     background-size: 220% 100%;
     background-position: 130% 0;
@@ -190,11 +185,11 @@
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    animation: brand-shimmer 8s linear infinite;
+    animation: word-shimmer 7s linear infinite;
   }
 }
 
-@keyframes brand-shimmer {
+@keyframes word-shimmer {
   to {
     background-position: -40% 0;
   }
@@ -209,7 +204,7 @@
     scroll-behavior: auto !important;
   }
   /* Shimmer becomes a solid, legible heading. */
-  .brand-shimmer {
+  .word-shimmer {
     background-image: none !important;
     color: var(--surface) !important;
     -webkit-text-fill-color: var(--surface) !important;
