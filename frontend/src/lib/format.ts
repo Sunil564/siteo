@@ -24,3 +24,19 @@ export const MODE_LABEL: Record<string, string> = {
   in_person: "In person",
   hybrid: "Hybrid",
 };
+
+/** Compact date-time for admin tables, e.g. "22 Jul 2026, 3:04 PM" (IST). */
+export function formatDateTime(iso: string | null): string {
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Kolkata",
+  }).format(d);
+}
