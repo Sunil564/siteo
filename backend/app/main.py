@@ -9,6 +9,9 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 
 from app import __version__
+from app.api import admin_audit as admin_audit_api
+from app.api import admin_settings as admin_settings_api
+from app.api import admin_users as admin_users_api
 from app.api import auth as auth_api
 from app.api import contact as contact_api
 from app.api import enquiries as enquiries_api
@@ -67,6 +70,9 @@ def create_app() -> FastAPI:
     app.include_router(membership_api.admin_router, prefix=settings.API_V1_PREFIX)
     app.include_router(contact_api.router, prefix=settings.API_V1_PREFIX)
     app.include_router(contact_api.admin_router, prefix=settings.API_V1_PREFIX)
+    app.include_router(admin_settings_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(admin_users_api.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(admin_audit_api.router, prefix=settings.API_V1_PREFIX)
 
     @app.get("/", tags=["health"])
     def root() -> dict:
