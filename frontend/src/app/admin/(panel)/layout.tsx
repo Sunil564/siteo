@@ -4,15 +4,31 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { LayoutDashboard, LogOut, Mail, Menu, MessageSquare, UserPlus, X } from "lucide-react";
+import {
+  CalendarDays,
+  LayoutDashboard,
+  LogOut,
+  Mail,
+  Menu,
+  MessageSquare,
+  ScrollText,
+  Settings,
+  Users,
+  UserPlus,
+  X,
+} from "lucide-react";
 import { me, logout, type AdminMe } from "@/lib/admin";
 import { cn } from "@/lib/utils";
 
 const NAV = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
+  { href: "/admin/events", label: "Events", icon: CalendarDays },
   { href: "/admin/enquiries", label: "Enquiries", icon: MessageSquare },
   { href: "/admin/membership", label: "Membership", icon: UserPlus },
   { href: "/admin/contact", label: "Contact", icon: Mail },
+  { href: "/admin/settings", label: "Settings", icon: Settings },
+  { href: "/admin/users", label: "Users", icon: Users, superOnly: true },
+  { href: "/admin/audit", label: "Audit log", icon: ScrollText, superOnly: true },
 ];
 
 export default function AdminPanelLayout({ children }: { children: React.ReactNode }) {
@@ -56,8 +72,8 @@ export default function AdminPanelLayout({ children }: { children: React.ReactNo
         <Image src="/siteo-logo.jpg" alt="SITEO" width={1600} height={400} className="h-6 w-auto" />
         <span className="ml-3 text-sm font-medium text-surface/60">Admin</span>
       </div>
-      <nav className="flex-1 px-3 py-4" aria-label="Admin">
-        {NAV.map((item) => {
+      <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Admin">
+        {NAV.filter((item) => !item.superOnly || admin.role === "super_admin").map((item) => {
           const active = item.exact ? pathname === item.href : pathname.startsWith(item.href);
           return (
             <Link
